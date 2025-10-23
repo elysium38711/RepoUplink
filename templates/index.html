@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub RepoUplink</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub RepoUplink</h1>
+            <p class="subtitle">Simple GitHub Repository Uploader</p>
+        </header>
+
+        <!-- Authentication Section -->
+        <div class="card" id="auth-section">
+            <h2>Connect to GitHub</h2>
+            <p class="info-text">
+                GitHub requires a Personal Access Token for authentication.
+                <a href="https://github.com/settings/tokens/new" target="_blank">Create one here</a>
+                with 'repo' permissions.
+            </p>
+            <div class="form-group">
+                <label for="github-token">Personal Access Token:</label>
+                <input type="password" id="github-token" placeholder="ghp_xxxxxxxxxxxx" value="{{ saved_token }}">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="save-token" checked>
+                    <label for="save-token">Save token (stored locally)</label>
+                </div>
+            </div>
+            <button onclick="connectGitHub()" class="btn btn-primary">Connect</button>
+            <div id="auth-status" class="status-message"></div>
+        </div>
+
+        <!-- Repository Selection Section -->
+        <div class="card" id="repo-section" style="display: none;">
+            <h2>Select Repository</h2>
+            <div class="form-group">
+                <label for="repo-search">Search Repositories:</label>
+                <input type="text" id="repo-search" placeholder="Type to search..." oninput="searchRepos()">
+            </div>
+            <div id="repo-list" class="repo-list">
+                <p class="loading">Loading repositories...</p>
+            </div>
+            <div id="selected-repo" class="selected-info"></div>
+        </div>
+
+        <!-- Folder Selection and Push Section -->
+        <div class="card" id="push-section" style="display: none;">
+            <h2>Upload to GitHub</h2>
+            <div class="form-group">
+                <label for="folder-path">Folder Path:</label>
+                <input type="text" id="folder-path" placeholder="C:\path\to\your\folder or /path/to/folder">
+                <p class="hint">Enter the full path to the folder you want to upload</p>
+            </div>
+            <div class="form-group">
+                <label for="commit-message">Commit Message:</label>
+                <textarea id="commit-message" rows="3" placeholder="Describe your changes...">Update files</textarea>
+            </div>
+            <button onclick="pushToGitHub()" class="btn btn-success">Push to GitHub</button>
+            <div id="push-status" class="status-message"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
