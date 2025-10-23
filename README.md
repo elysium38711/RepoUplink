@@ -12,8 +12,29 @@ A simple web-based GUI application for uploading local folders to GitHub reposit
 - Auto-saves your preferences (token and last folder path)
 - Support for both new and existing git repositories
 - Works with public and private repositories
+- Docker support for easy deployment
+
+## Quick Start with Docker
+
+**Easiest way to run RepoUplink:**
+
+```bash
+docker-compose up -d
+```
+
+Then open: **http://localhost:5000**
+
+See [DOCKER.md](DOCKER.md) for full Docker documentation.
 
 ## Prerequisites
+
+### Option 1: Docker (Recommended)
+
+- Docker Desktop installed
+- A GitHub account
+- A GitHub Personal Access Token
+
+### Option 2: Python Installation
 
 - Python 3.7 or higher
 - Git installed on your system
@@ -21,6 +42,21 @@ A simple web-based GUI application for uploading local folders to GitHub reposit
 - A GitHub Personal Access Token
 
 ## Installation
+
+### Docker Installation
+
+1. Clone or download this repository
+
+2. Start with Docker Compose:
+```bash
+docker-compose up -d
+```
+
+3. Access at: http://localhost:5000
+
+See [DOCKER.md](DOCKER.md) for advanced configuration.
+
+### Python Installation
 
 1. Clone or download this repository
 

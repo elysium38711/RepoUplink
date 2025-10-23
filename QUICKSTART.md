@@ -10,18 +10,24 @@
 5. **Copy the token** (starts with `ghp_`)
 
 ### Step 2: Install & Run
-**On Windows:**
+
+**Option A: Docker (Recommended - Easiest)**
+```bash
+docker-compose up -d
+```
+
+**Option B: Python (Windows)**
 ```bash
 start.bat
 ```
 
-**On Mac/Linux:**
+**Option C: Python (Mac/Linux)**
 ```bash
 chmod +x start.sh
 ./start.sh
 ```
 
-Or manually:
+**Option D: Python (Manual)**
 ```bash
 pip install -r requirements.txt
 python app.py
@@ -40,13 +46,31 @@ python app.py
 
 ## Example Folder Paths
 
-**Windows:**
+**Python Installation (Direct paths):**
+
+Windows:
 - `C:\Users\YourName\Documents\MyProject`
 - `D:\Code\WebApp`
 
-**Mac/Linux:**
+Mac/Linux:
 - `/Users/yourname/projects/myapp`
 - `/home/username/code/website`
+
+**Docker Installation (Requires volume mounting):**
+
+First, edit `docker-compose.yml` to mount your folders:
+```yaml
+volumes:
+  - C:/Projects:/projects  # Windows
+  # or
+  - /home/username/projects:/projects  # Mac/Linux
+```
+
+Then use container paths in the app:
+- `/projects/MyApp`
+- `/projects/Website`
+
+See [DOCKER.md](DOCKER.md) for details on mounting volumes.
 
 ## Tips
 

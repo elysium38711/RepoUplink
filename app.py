@@ -7,8 +7,8 @@ from pathlib import Path
 import shutil
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key-change-this'  # Change this in production
-SETTINGS_FILE = 'settings.json'
+app.secret_key = os.environ.get('SECRET_KEY', 'your-secret-key-change-this')  # Change this in production
+SETTINGS_FILE = os.environ.get('SETTINGS_FILE', 'settings.json')
 
 def load_settings():
     """Load saved settings from file"""
@@ -214,4 +214,8 @@ def load_user_settings():
         return jsonify({'error': f'Error loading settings: {str(e)}'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    # Use 0.0.0.0 to allow external access (needed for Docker)
+    host = os.environ.get('FLASK_HOST', '0.0.0.0')
+    port = int(os.environ.get('FLASK_PORT', 5000))
+    debug = os.environ.get('FLASK_ENV', 'production') != 'production'
+    app.run(debug=debug, host=host, port=port)

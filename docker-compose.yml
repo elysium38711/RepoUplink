@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  repouplink:
+    build: .
+    container_name: repouplink
+    ports:
+      - "5000:5000"
+    volumes:
+      # Persist settings between container restarts
+      - ./data:/app/data
+      # Mount your projects folder so you can upload them
+      # Windows example: Uncomment and adjust the path below
+      # - C:/Users/YourName/Projects:/projects
+      # Linux/Mac example:
+      # - /home/username/projects:/projects
+    environment:
+      - FLASK_ENV=production
+      - SETTINGS_FILE=/app/data/settings.json
+    restart: unless-stopped
+    networks:
+      - repouplink-network
+
+networks:
+  repouplink-network:
+    driver: bridge
