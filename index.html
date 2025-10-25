@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Ranking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen active">
+            <div class="container">
+                <h1 class="game-title">Reverse Ranking</h1>
+                <div class="login-container">
+                    <!-- Guest Login -->
+                    <div class="menu-section">
+                        <h3>🎮 Quick Play (Guest)</h3>
+                        <p class="login-subtitle">Join lobbies and play games</p>
+                        <input type="text" id="guestUsernameInput" placeholder="Enter display name" maxlength="20" onkeypress="if(event.key==='Enter') loginAsGuest()">
+                        <button class="btn-secondary" onclick="loginAsGuest()">Play as Guest</button>
+                        <div class="feature-note">
+                            <small>✓ Join lobbies  ✗ Game history  ✗ Presets</small>
+                        </div>
+                    </div>
+
+                    <!-- Registered Login -->
+                    <div class="menu-section">
+                        <h3>👤 Registered Account</h3>
+                        <p class="login-subtitle">Full features with game history</p>
+                        <input type="text" id="loginUsernameInput" placeholder="Username" maxlength="20" onkeypress="if(event.key==='Enter') loginRegistered()">
+                        <input type="password" id="loginPasswordInput" placeholder="Password" maxlength="50" required onkeypress="if(event.key==='Enter') loginRegistered()">
+                        <div class="login-buttons">
+                            <button class="btn-primary" onclick="loginRegistered()">Login</button>
+                            <button class="btn-primary" onclick="registerUser()">Register</button>
+                        </div>
+                        <div class="feature-note">
+                            <small>✓ Join lobbies  ✓ Game history  ✓ Create presets</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Homepage -->
+        <div id="homepage" class="screen">
+            <div class="container">
+                <div class="homepage-header">
+                    <h1 class="game-title">Reverse Ranking</h1>
+                    <div class="user-info">
+                        <div class="user-badge-container">
+                            <span class="username-display" id="currentUsername"></span>
+                            <span class="user-badge" id="userBadge"></span>
+                        </div>
+                        <button class="btn-secondary btn-small" onclick="logout()">Logout</button>
+                    </div>
+                </div>
+
+                <div class="game-modes">
+                    <div class="game-mode-card" onclick="startNewGame()">
+                        <div class="mode-icon">🎮</div>
+                        <h3>New Game</h3>
+                        <p>Create a custom ranking game</p>
+                    </div>
+
+                    <div class="game-mode-card" onclick="startRandomGame()">
+                        <div class="mode-icon">🎲</div>
+                        <h3>Random Game</h3>
+                        <p>Quick game with random items</p>
+                    </div>
+
+                    <div class="game-mode-card" onclick="loadPresetGame()">
+                        <div class="mode-icon">📋</div>
+                        <h3>Preset Game</h3>
+                        <p>Play from saved templates</p>
+                    </div>
+
+                    <div class="game-mode-card" onclick="showCompletedRankings()">
+                        <div class="mode-icon">🏆</div>
+                        <h3>Rankings</h3>
+                        <p>View completed games</p>
+                    </div>
+
+                    <div class="game-mode-card mode-featured" onclick="createNewLobby()">
+                        <div class="mode-icon">👥</div>
+                        <h3>Create Lobby</h3>
+                        <p>Host a multiplayer game</p>
+                    </div>
+
+                    <div class="game-mode-card" onclick="startPartyMode()">
+                        <div class="mode-icon">🎉</div>
+                        <h3>Party Mode</h3>
+                        <p>Pass-and-play on one device</p>
+                    </div>
+                </div>
+
+                <!-- Active Lobbies Section -->
+                <div class="active-lobbies-section">
+                    <div class="lobbies-header">
+                        <h2>Active Lobbies</h2>
+                        <div class="join-code-section">
+                            <input type="text" id="joinCodeInput" placeholder="Join Code" maxlength="6">
+                            <button class="btn-primary btn-small" onclick="joinByCode()">Join</button>
+                        </div>
+                    </div>
+                    <div id="activeLobbiesList" class="lobbies-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Lobby Screen -->
+        <div id="lobbyScreen" class="screen">
+            <div class="container">
+                <div class="lobby-screen-header">
+                    <h2>Quick Lobby</h2>
+                    <div class="lobby-code-display">
+                        <span class="code-label">Join Code:</span>
+                        <span class="code-value" id="lobbyJoinCode">------</span>
+                        <button class="btn-secondary btn-small" onclick="copyJoinCode()">Copy</button>
+                    </div>
+                </div>
+                <div class="lobby-container">
+                    <div class="lobby-info">
+                        <div class="lobby-header-row">
+                            <h3>Players in Lobby</h3>
+                            <button class="btn-secondary btn-small" onclick="simulateAddPlayer()" id="addPlayerBtn" style="display: none;">+ Add Player (Dev)</button>
+                        </div>
+                        <div id="lobbyPlayersList"></div>
+                    </div>
+                    <div class="lobby-controls">
+                        <div class="menu-section">
+                            <label for="lobbyGameTitle">Game Title:</label>
+                            <input type="text" id="lobbyGameTitle" placeholder="Enter game title" onchange="updateLobbyTitle()">
+                        </div>
+                        <div class="menu-section">
+                            <label for="lobbyRowAmount">Number of Rows:</label>
+                            <div class="number-input">
+                                <button class="btn-adjust" onclick="adjustLobbyRows(-1)">−</button>
+                                <input type="number" id="lobbyRowAmount" value="10" min="1" max="100">
+                                <button class="btn-adjust" onclick="adjustLobbyRows(1)">+</button>
+                            </div>
+                        </div>
+                        <div class="ready-status">
+                            <button class="btn-primary" id="readyButton" onclick="toggleReady()">Ready Up</button>
+                            <p class="ready-count" id="readyCount">0 / 0 players ready</p>
+                        </div>
+                        <button class="btn-primary btn-large" onclick="startLobbyGame()" id="startLobbyButton" disabled>Start Game</button>
+                    </div>
+                </div>
+                <button class="btn-secondary" onclick="leaveLobby()">Leave Lobby</button>
+            </div>
+        </div>
+
+        <!-- Party Mode Setup Screen -->
+        <div id="partyModeScreen" class="screen">
+            <div class="container">
+                <h1 class="game-title">Party Mode 🎉</h1>
+                <p class="party-subtitle">Pass-and-play game for multiple players on one device</p>
+
+                <div class="menu-section">
+                    <label for="partyGameTitle">Game Title:</label>
+                    <input type="text" id="partyGameTitle" placeholder="Enter ranking topic (e.g., 'Best Movies')">
+                </div>
+
+                <div class="menu-section">
+                    <label for="partyRowAmount">Number of Rows:</label>
+                    <div class="number-input">
+                        <button class="btn-adjust" onclick="adjustPartyRows(-1)">−</button>
+                        <input type="number" id="partyRowAmount" value="10" min="1" max="100">
+                        <button class="btn-adjust" onclick="adjustPartyRows(1)">+</button>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h3>Party Players</h3>
+                    <p class="player-hint">Add all players who will be sharing this device</p>
+                    <div id="partyPlayerList"></div>
+                    <button class="btn-secondary" onclick="addPartyPlayer()">+ Add Player</button>
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" onclick="setupPartyGame()">Continue to Setup</button>
+                    <button class="btn-secondary" onclick="returnToHomepage()">Back to Homepage</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Menu (Game Setup) -->
+        <div id="mainMenu" class="screen">
+            <div class="container">
+                <h1 class="game-title">Reverse Ranking</h1>
+                <div class="menu-section">
+                    <label for="gameTitle">Game Title:</label>
+                    <input type="text" id="gameTitle" placeholder="Enter ranking topic (e.g., 'Best Movies')">
+                    <div class="saved-titles">
+                        <label>Quick Pick:</label>
+                        <div id="savedTitlesList"></div>
+                    </div>
+                </div>
+                <div class="menu-section">
+                    <label for="rowAmount">Number of Rows:</label>
+                    <div class="number-input">
+                        <button class="btn-adjust" onclick="adjustRows(-1)">−</button>
+                        <input type="number" id="rowAmount" value="10" min="1" max="100">
+                        <button class="btn-adjust" onclick="adjustRows(1)">+</button>
+                    </div>
+                </div>
+                <div class="menu-section">
+                    <h3>Players</h3>
+                    <div id="playerList"></div>
+                    <button class="btn-secondary" onclick="addPlayer()">+ Add Player</button>
+                </div>
+                <div class="menu-actions">
+                    <button class="btn-primary" onclick="setupGame()">Continue to Setup</button>
+                    <button class="btn-secondary" onclick="showCompletedRankings()">View Completed Rankings</button>
+                    <button class="btn-secondary" onclick="returnToHomepage()">Back to Homepage</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Setup Screen - Fill in rows -->
+        <div id="setupScreen" class="screen">
+            <div class="container">
+                <div class="setup-header">
+                    <h2 id="setupTitle"></h2>
+                    <p class="setup-description">Fill in all the ranking items below, then start the game!</p>
+                </div>
+
+                <div class="setup-list" id="setupList"></div>
+
+                <div class="setup-actions">
+                    <button class="btn-primary" onclick="startGameFromSetup()">Start Game</button>
+                    <button class="btn-secondary" onclick="returnToMenu()">Back to Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="container">
+                <div class="game-header">
+                    <h2 id="gameCurrentTitle"></h2>
+                    <div class="turn-indicator">
+                        <span id="currentPlayerTurn"></span>
+                    </div>
+                </div>
+
+                <div class="game-content">
+                    <div class="ranking-list" id="rankingList"></div>
+
+                    <div class="sidebar">
+                        <div class="top-remaining">
+                            <h3 id="topRemainingTitle">Top 5</h3>
+                            <div id="topRemainingList"></div>
+                        </div>
+                        <div class="players-info">
+                            <h3>Players</h3>
+                            <div id="playersDisplay"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-actions">
+                    <button class="btn-secondary" onclick="returnToMenu()">Return to Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completed Rankings Screen -->
+        <div id="completedScreen" class="screen">
+            <div class="container">
+                <div class="completed-header">
+                    <h2>Completed Rankings</h2>
+                    <div class="sort-controls">
+                        <label>Sort by:</label>
+                        <select id="sortSelect" onchange="changeSortOrder(this.value)">
+                            <option value="date-new">Newest First</option>
+                            <option value="date-old">Oldest First</option>
+                            <option value="title-asc">Title (A-Z)</option>
+                            <option value="title-desc">Title (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="completedList" class="completed-grid"></div>
+                <button class="btn-secondary" onclick="returnToMenu()">Return to Menu</button>
+            </div>
+        </div>
+
+        <!-- Custom Modal -->
+        <div id="customModal" class="modal">
+            <div class="modal-overlay" onclick="closeModal()"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle"></h3>
+                </div>
+                <div class="modal-body">
+                    <p id="modalMessage"></p>
+                </div>
+                <div class="modal-footer" id="modalFooter">
+                    <button class="btn-primary" onclick="closeModal()" id="modalOkButton">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

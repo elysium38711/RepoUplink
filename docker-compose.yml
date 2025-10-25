@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  reverse-rank:
+    build: .
+    image: reverse-ranking-game:latest
+    container_name: reverse-ranking-game
+    environment:
+      # You can change these in unRAID's template UI
+      - PORT=3000
+      - HOST=0.0.0.0
+      - DATA_DIR=/data
+      - LOG_DIR=/logs
+    ports:
+      - "3000:3000" # host:container
+    volumes:
+      # Map host storage locations to container paths
+      - ./data:/data
+      - ./logs:/logs
+    restart: unless-stopped
+
+volumes:
+  # Declared for clarity; using bind mounts above for easy host file access
+  data: {}
+  logs: {}
+

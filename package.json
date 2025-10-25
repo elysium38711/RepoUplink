@@ -1,0 +1,17 @@
+{
+  "name": "reverse-ranking-game",
+  "version": "1.0.0",
+  "description": "A multiplayer web-based reverse ranking game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "game",
+    "ranking",
+    "multiplayer"
+  ],
+  "author": "",
+  "license": "MIT"
+}
