@@ -12,3 +12,9 @@ ENV/
 settings.json
 .env
 *.log
+
+# Data directory (contains settings and user data)
+data/
+
+# Docker override file (user-specific configuration)
+docker-compose.override.yml

@@ -1,0 +1,53 @@
+# Docker Compose Override Example
+# This file shows how to customize volume mounts without modifying docker-compose.yml
+#
+# To use:
+# 1. Copy this file to docker-compose.override.yml
+# 2. Uncomment and customize the volumes section below
+# 3. Run: docker-compose up -d
+#
+# Docker Compose automatically reads docker-compose.override.yml if it exists
+
+version: '3.8'
+
+services:
+  repouplink:
+    volumes:
+      # Mount your project folders here
+      # Uncomment and adjust based on your operating system:
+
+      # === Windows Examples ===
+      # Single folder:
+      # - C:/Users/YourName/Projects:/projects
+
+      # Multiple folders:
+      # - C:/Users/YourName/Work:/work
+      # - C:/Users/YourName/Personal:/personal
+      # - D:/Code:/code
+
+      # === Linux Examples ===
+      # Single folder:
+      # - /home/username/projects:/projects
+
+      # Multiple folders:
+      # - /home/username/work:/work
+      # - /home/username/personal:/personal
+      # - /opt/projects:/opt-projects
+
+      # === macOS Examples ===
+      # Single folder:
+      # - /Users/username/Projects:/projects
+
+      # Multiple folders:
+      # - /Users/username/Work:/work
+      # - /Users/username/Personal:/personal
+      # - /Users/username/Desktop:/desktop
+
+    # Optional: Override environment variables
+    # environment:
+    #   - SECRET_KEY=my-custom-secret-key
+    #   - FLASK_PORT=8080
+
+    # Optional: Change the exposed port
+    # ports:
+    #   - "8080:5000"  # Access at http://localhost:8080
