@@ -1,0 +1,1217 @@
+[
+  {
+    "username": "Zeus",
+    "password": "044862008e834b0c90c55b5cf836acb59bf31efc6da55d02fabd7dfd526b8705",
+    "isRegistered": true,
+    "completedGames": [
+      {
+        "id": 1761605961776,
+        "title": "Favorite Desserts",
+        "date": "2025-10-27T22:59:21.776Z",
+        "winner": "Berry Crisp",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Bread Pudding",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Apple Pie",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Boba Tea",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Creamsicles",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Danish Pastries",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Cannoli",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Rasgulla",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Strawberry Shortcake",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Coconut Cream Pie",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Berry Crisp",
+            "rank": 1
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#8b5cf6"
+          }
+        ]
+      },
+      {
+        "id": 1761522433049,
+        "title": "Best Songs",
+        "date": "2025-10-26T23:47:13.049Z",
+        "winner": "Bohemian Rhapsody",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Hotel California",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Purple Rain",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Africa",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "November Rain",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Stairway to Heaven",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Don't Stop Believin'",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Bohemian Rhapsody",
+            "rank": 1
+          },
+          {
+            "number": 8,
+            "value": "Imagine",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Mr. Brightside",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Wonderwall",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#6366f1"
+          },
+          {
+            "name": "Zeus",
+            "color": "#8b5cf6"
+          }
+        ]
+      },
+      {
+        "id": 1761521996120,
+        "title": "Top 10 Movies",
+        "date": "2025-10-26T23:39:56.120Z",
+        "winner": "The Dark Knight",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "The Shawshank Redemption",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "The Prestige",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "The Dark Knight",
+            "rank": 1
+          },
+          {
+            "number": 4,
+            "value": "Inception",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Forrest Gump",
+            "rank": 1
+          },
+          {
+            "number": 6,
+            "value": "The Godfather",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Saving Private Ryan",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Gladiator",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "The Green Mile",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Goodfellas",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#06b6d4"
+          },
+          {
+            "name": "Carly24",
+            "color": "#8b5cf6"
+          }
+        ]
+      }
+    ],
+    "savedTitles": [
+      "test",
+      "Best Restaurants",
+      "Favorite Foods",
+      "Top 10 Movies",
+      "Coolest Cars",
+      "Top Vacation Spots",
+      "Dream Destinations",
+      "Movies"
+    ],
+    "presetGames": [],
+    "createdAt": "2025-10-25T19:49:46.811Z",
+    "tag": "4520",
+    "stats": {
+      "rankingsCompleted": 0,
+      "rankingsHosted": 0,
+      "points": 0,
+      "gameModesCompleted": {
+        "singleDevice": 0,
+        "random": 0,
+        "preset": 0,
+        "lobby": 0,
+        "party": 0
+      },
+      "lobbiesCreated": 0,
+      "lobbiesSaved": 0,
+      "incompleteGames": 0,
+      "gamesWithFriends": {}
+    },
+    "friends": [],
+    "avatar": {
+      "color": "#3b82f6",
+      "initial": "Z"
+    }
+  },
+  {
+    "username": "Carly24",
+    "password": "35241b61223efb7524972ed8cf596f7884eebf6563a59458fd688d15db3fc2fb",
+    "isRegistered": true,
+    "completedGames": [
+      {
+        "id": 1761661762538,
+        "title": "Best 90s Sitcoms",
+        "date": "2025-10-28T14:29:22.538Z",
+        "winner": "That '70s Show",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "ER",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Seinfeld",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Golden Girls",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Martin",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Charmed",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "That '70s Show",
+            "rank": 1
+          },
+          {
+            "number": 7,
+            "value": "Babylon 5",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Star Trek: Deep Space Nine",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Caroline in the City",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "The Fresh Prince of Bel-Air",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#6366f1"
+          }
+        ]
+      },
+      {
+        "id": 1761607676851,
+        "title": "Most Addictive Apps",
+        "date": "2025-10-27T23:27:56.851Z",
+        "winner": "WhatsApp",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "OneNote",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "AliExpress",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "WhatsApp",
+            "rank": 1
+          },
+          {
+            "number": 4,
+            "value": "Alto's Adventure",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Elevate",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#06b6d4"
+          }
+        ]
+      },
+      {
+        "id": 1761599893289,
+        "title": "Books",
+        "date": "2025-10-27T21:18:13.289Z",
+        "winner": "Harry potter",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Lord the rjng",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Harry potter",
+            "rank": 1
+          },
+          {
+            "number": 3,
+            "value": "Brand",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Item 4",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Item 5",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Item 6",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Item 7",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Item 8",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Item 9",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Item 10",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#a855f7"
+          },
+          {
+            "name": "Player 2",
+            "color": "#f59e0b"
+          },
+          {
+            "name": "Player 3",
+            "color": "#14b8a6"
+          }
+        ]
+      },
+      {
+        "id": 1761580407086,
+        "title": "Favorite Candy",
+        "date": "2025-10-27T15:53:27.086Z",
+        "winner": "Reese's Peanut Butter Cups",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Air Heads",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Swedish Fish",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Bubble Yum",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Toblerone",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "100 Grand",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Atomic Fireball",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Now and Later",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Reese's Peanut Butter Cups",
+            "rank": 1
+          },
+          {
+            "number": 9,
+            "value": "Terry's Chocolate Orange",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Mentos",
+            "rank": null
+          },
+          {
+            "number": 11,
+            "value": "Red Vines",
+            "rank": null
+          },
+          {
+            "number": 12,
+            "value": "Butterfinger",
+            "rank": null
+          },
+          {
+            "number": 13,
+            "value": "Hershey's Chocolate Bar",
+            "rank": null
+          },
+          {
+            "number": 14,
+            "value": "Rolo",
+            "rank": null
+          },
+          {
+            "number": 15,
+            "value": "Tootsie Pops",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#a855f7"
+          }
+        ]
+      },
+      {
+        "id": 1761571453419,
+        "title": "Top Disney Movies",
+        "date": "2025-10-27T13:24:13.419Z",
+        "winner": "Toy Story",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Turning Red",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "The Rescuers Down Under",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Toy Story",
+            "rank": 1
+          },
+          {
+            "number": 4,
+            "value": "The Tigger Movie",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Oliver & Company",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "The Princess and the Frog",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "The Good Dinosaur",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Sleeping Beauty",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Pirates of the Caribbean: Dead Man's Chest",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Atlantis: The Lost Empire",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#f97316"
+          }
+        ]
+      },
+      {
+        "id": 1761571270558,
+        "title": "Best Superheroes",
+        "date": "2025-10-27T13:21:10.558Z",
+        "winner": "Loki",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Batgirl",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Green Goblin",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Hawkeye",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Jessica Jones",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Winter Soldier",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Static Shock",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Black Widow",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Robin",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Magneto",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Ms. Marvel",
+            "rank": null
+          },
+          {
+            "number": 11,
+            "value": "Jubilee",
+            "rank": null
+          },
+          {
+            "number": 12,
+            "value": "Harley Quinn",
+            "rank": null
+          },
+          {
+            "number": 13,
+            "value": "Loki",
+            "rank": 1
+          },
+          {
+            "number": 14,
+            "value": "The Flash",
+            "rank": null
+          },
+          {
+            "number": 15,
+            "value": "Nightwing",
+            "rank": null
+          },
+          {
+            "number": 16,
+            "value": "Beast",
+            "rank": null
+          },
+          {
+            "number": 17,
+            "value": "Captain America",
+            "rank": null
+          },
+          {
+            "number": 18,
+            "value": "Hulk",
+            "rank": null
+          },
+          {
+            "number": 19,
+            "value": "Iceman",
+            "rank": null
+          },
+          {
+            "number": 20,
+            "value": "Spawn",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#3b82f6"
+          }
+        ]
+      },
+      {
+        "id": 1761567729517,
+        "title": "Most Iconic Bands",
+        "date": "2025-10-27T12:22:09.517Z",
+        "winner": "Linkin Park",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "The Strokes",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Kiss",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Cream",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Rage Against the Machine",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Linkin Park",
+            "rank": 1
+          },
+          {
+            "number": 6,
+            "value": "Joy Division",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "AC/DC",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Black Sabbath",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Bon Jovi",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Tame Impala",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#ec4899"
+          }
+        ]
+      },
+      {
+        "id": 1761527892282,
+        "title": "Harry Potter Characters",
+        "date": "2025-10-27T01:18:12.282Z",
+        "winner": "Mcgonagall",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Harry",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Ron",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Hermoine",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Mcgonagall",
+            "rank": 1
+          },
+          {
+            "number": 5,
+            "value": "Hagrid",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Hedwig",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Fred",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Tonks",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Luna",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Draco",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#84cc16"
+          },
+          {
+            "name": "Taylor",
+            "color": "#06b6d4"
+          }
+        ]
+      },
+      {
+        "id": 1761527280482,
+        "title": "Test",
+        "date": "2025-10-27T01:08:00.482Z",
+        "winner": "Tuba",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Test",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Testie",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Testicles",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Testosterone",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Tuba",
+            "rank": 1
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "id": 1761527147501,
+        "title": "Favorite Foods",
+        "date": "2025-10-27T01:05:47.501Z",
+        "winner": "Pasta",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Chicken Wings",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Ice Cream",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Tacos",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Pizza",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Pad Thai",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Pasta",
+            "rank": 1
+          },
+          {
+            "number": 7,
+            "value": "Pho",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "BBQ Ribs",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Ramen",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Sushi",
+            "rank": null
+          },
+          {
+            "number": 11,
+            "value": "Lasagna",
+            "rank": null
+          },
+          {
+            "number": 12,
+            "value": "Burritos",
+            "rank": null
+          },
+          {
+            "number": 13,
+            "value": "Burgers",
+            "rank": null
+          },
+          {
+            "number": 14,
+            "value": "Steak",
+            "rank": null
+          },
+          {
+            "number": 15,
+            "value": "Fried Chicken",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#6366f1"
+          }
+        ]
+      },
+      {
+        "id": 1761522433049,
+        "title": "Best Songs",
+        "date": "2025-10-26T23:47:13.049Z",
+        "winner": "Bohemian Rhapsody",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Hotel California",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Purple Rain",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Africa",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "November Rain",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Stairway to Heaven",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Don't Stop Believin'",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Bohemian Rhapsody",
+            "rank": 1
+          },
+          {
+            "number": 8,
+            "value": "Imagine",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Mr. Brightside",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Wonderwall",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#6366f1"
+          },
+          {
+            "name": "Zeus",
+            "color": "#8b5cf6"
+          }
+        ]
+      },
+      {
+        "id": 1761521996120,
+        "title": "Top 10 Movies",
+        "date": "2025-10-26T23:39:56.120Z",
+        "winner": "The Dark Knight",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "The Shawshank Redemption",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "The Prestige",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "The Dark Knight",
+            "rank": 1
+          },
+          {
+            "number": 4,
+            "value": "Inception",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Forrest Gump",
+            "rank": 1
+          },
+          {
+            "number": 6,
+            "value": "The Godfather",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Saving Private Ryan",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Gladiator",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "The Green Mile",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Goodfellas",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#06b6d4"
+          },
+          {
+            "name": "Carly24",
+            "color": "#8b5cf6"
+          }
+        ]
+      },
+      {
+        "id": 1761517046927,
+        "title": "Favorite TV Shows",
+        "date": "2025-10-26T22:17:26.927Z",
+        "winner": "Sherlock",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Friends",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Parks and Recreation",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Game of Thrones",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Succession",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "The Sopranos",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Stranger Things",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Better Call Saul",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Sherlock",
+            "rank": 1
+          },
+          {
+            "number": 9,
+            "value": "The Crown",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Breaking Bad",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Kim (Guest-983101)",
+            "color": "#ef4444"
+          },
+          {
+            "name": "Carly24",
+            "color": "#14b8a6"
+          }
+        ]
+      }
+    ],
+    "savedTitles": [
+      "Favorite TV Shows",
+      "Top 10 Movies",
+      "Colors",
+      "Coolest Cars"
+    ],
+    "presetGames": [],
+    "createdAt": "2025-10-25T19:51:05.176Z",
+    "tag": "6915",
+    "stats": {
+      "rankingsCompleted": 1,
+      "rankingsHosted": 1,
+      "points": 0,
+      "gameModesCompleted": {
+        "singleDevice": 0,
+        "random": 1,
+        "preset": 0,
+        "lobby": 0,
+        "party": 0
+      },
+      "lobbiesCreated": 3,
+      "lobbiesSaved": 4,
+      "incompleteGames": 0,
+      "gamesWithFriends": {}
+    },
+    "friends": [],
+    "avatar": {
+      "color": "#3b82f6",
+      "initial": "C"
+    }
+  },
+  {
+    "username": "admin",
+    "password": "044862008e834b0c90c55b5cf836acb59bf31efc6da55d02fabd7dfd526b8705",
+    "isRegistered": true,
+    "completedGames": [],
+    "savedTitles": [],
+    "presetGames": [],
+    "createdAt": "2025-10-27T23:58:38.638Z",
+    "tag": "3036",
+    "stats": {
+      "rankingsCompleted": 0,
+      "rankingsHosted": 0,
+      "points": 0,
+      "gameModesCompleted": {
+        "singleDevice": 0,
+        "random": 0,
+        "preset": 0,
+        "lobby": 0,
+        "party": 0
+      },
+      "lobbiesCreated": 0,
+      "lobbiesSaved": 0,
+      "incompleteGames": 0,
+      "gamesWithFriends": {}
+    },
+    "friends": [],
+    "avatar": {
+      "color": "#3b82f6",
+      "initial": "A"
+    }
+  }
+]

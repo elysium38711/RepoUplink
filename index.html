@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Return to Home Button -->
+    <button id="homeButton" class="home-btn" onclick="returnToHome()" title="Return to Homepage">
+        <span class="home-icon">🏠</span>
+    </button>
+
     <div id="app">
         <!-- Login Screen -->
         <div id="loginScreen" class="screen active">
@@ -40,6 +45,31 @@
                     </div>
                 </div>
             </div>
+            <div class="login-version-label">Version - 1.0.2.2</div>
+        </div>
+
+        <!-- Change Password Screen -->
+        <div id="changePasswordScreen" class="screen">
+            <div class="container">
+                <h1 class="game-title">🔒 Change Password Required</h1>
+                <p class="party-subtitle">You must change your password before continuing</p>
+
+                <div class="menu-section">
+                    <label for="currentPasswordInput">Current Password:</label>
+                    <input type="password" id="currentPasswordInput" placeholder="Enter current password" maxlength="50">
+
+                    <label for="newPasswordInput">New Password:</label>
+                    <input type="password" id="newPasswordInput" placeholder="Enter new password" maxlength="50">
+
+                    <label for="confirmPasswordInput">Confirm New Password:</label>
+                    <input type="password" id="confirmPasswordInput" placeholder="Confirm new password" maxlength="50" onkeypress="if(event.key==='Enter') changePassword()">
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" onclick="changePassword()">Change Password</button>
+                    <button class="btn-secondary" onclick="logout()">Cancel</button>
+                </div>
+            </div>
         </div>
 
         <!-- Homepage -->
@@ -52,27 +82,29 @@
                             <span class="username-display" id="currentUsername"></span>
                             <span class="user-badge" id="userBadge"></span>
                         </div>
+                        <button class="btn-secondary btn-small" id="profileButton" onclick="showProfile()" style="display: none;">Profile</button>
+                        <button class="btn-secondary btn-small" id="messagesButton" onclick="showMessages()" style="display: none;">Messages</button>
                         <button class="btn-secondary btn-small" onclick="logout()">Logout</button>
                     </div>
                 </div>
 
                 <div class="game-modes">
-                    <div class="game-mode-card" onclick="startNewGame()">
+                    <div class="game-mode-card" onclick="startSingleDeviceMode()">
                         <div class="mode-icon">🎮</div>
-                        <h3>New Game</h3>
+                        <h3>New Ranking</h3>
                         <p>Create a custom ranking game</p>
                     </div>
 
                     <div class="game-mode-card" onclick="startRandomGame()">
                         <div class="mode-icon">🎲</div>
                         <h3>Random Game</h3>
-                        <p>Quick game with random items</p>
+                        <p>Randomly generated ranking</p>
                     </div>
 
-                    <div class="game-mode-card" onclick="loadPresetGame()">
+                    <div class="game-mode-card" onclick="openPresetGameMenu()">
                         <div class="mode-icon">📋</div>
                         <h3>Preset Game</h3>
-                        <p>Play from saved templates</p>
+                        <p>Play or create presets</p>
                     </div>
 
                     <div class="game-mode-card" onclick="showCompletedRankings()">
@@ -90,7 +122,13 @@
                     <div class="game-mode-card" onclick="startPartyMode()">
                         <div class="mode-icon">🎉</div>
                         <h3>Party Mode</h3>
-                        <p>Pass-and-play on one device</p>
+                        <p>Multiplayer with turn-based setup</p>
+                    </div>
+
+                    <div class="game-mode-card admin-only" onclick="showAdminPanel()" style="display: none;">
+                        <div class="mode-icon">⚙️</div>
+                        <h3>Admin Panel</h3>
+                        <p>Manage users, presets, and more</p>
                     </div>
                 </div>
 
@@ -108,6 +146,324 @@
             </div>
         </div>
 
+        <!-- Profile Screen -->
+        <div id="profileScreen" class="screen">
+            <div class="container profile-container">
+                <div class="profile-header">
+                    <div class="profile-avatar" id="profileAvatar">
+                        <span id="profileAvatarInitial">?</span>
+                    </div>
+                    <div class="profile-heading">
+                        <h1 class="game-title">Profile</h1>
+                        <p class="profile-username" id="profileNameDisplay"></p>
+                        <p class="profile-tag" id="profileTagDisplay"></p>
+                        <p class="profile-created" id="profileCreatedAt"></p>
+                    </div>
+                </div>
+
+                <div class="profile-grid">
+                    <section class="profile-card">
+                        <h2>Overview</h2>
+                        <div class="profile-stats-grid">
+                            <div class="stat-tile">
+                                <span class="stat-label">Rankings Completed</span>
+                                <span class="stat-value" id="statRankingsCompleted">0</span>
+                            </div>
+                            <div class="stat-tile">
+                                <span class="stat-label">Rankings Hosted</span>
+                                <span class="stat-value" id="statRankingsHosted">0</span>
+                            </div>
+                            <div class="stat-tile">
+                                <span class="stat-label">Points</span>
+                                <span class="stat-value" id="statPoints">0</span>
+                            </div>
+                            <div class="stat-tile">
+                                <span class="stat-label">Lobbies Created</span>
+                                <span class="stat-value" id="statLobbiesCreated">0</span>
+                            </div>
+                            <div class="stat-tile">
+                                <span class="stat-label">Saved Presets</span>
+                                <span class="stat-value" id="statSavedPresets">0</span>
+                            </div>
+                            <div class="stat-tile">
+                                <span class="stat-label">Incomplete Games</span>
+                                <span class="stat-value" id="statIncompleteGames">0</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="profile-card">
+                        <h2>Game Modes Completed</h2>
+                        <ul class="mode-stats-list" id="modeStatsList">
+                            <li><span>Single Device</span><span id="modeSingleCount">0</span></li>
+                            <li><span>Random</span><span id="modeRandomCount">0</span></li>
+                            <li><span>Preset</span><span id="modePresetCount">0</span></li>
+                            <li><span>Lobby</span><span id="modeLobbyCount">0</span></li>
+                            <li><span>Party</span><span id="modePartyCount">0</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="profile-card">
+                        <h2>Suggestions</h2>
+                        <p class="profile-note">Share feedback or ideas for the team.</p>
+                        <textarea id="suggestionInput" class="profile-textarea" rows="4" maxlength="500" placeholder="Write your suggestion..."></textarea>
+                        <div class="profile-actions">
+                            <button class="btn-primary" onclick="submitSuggestion()">Send Suggestion</button>
+                            <span class="profile-status" id="suggestionStatus"></span>
+                        </div>
+                    </section>
+
+                    <section class="profile-card">
+                        <h2>Friends</h2>
+                        <p class="profile-note">Your Tag: <span id="profileOwnTag">—</span></p>
+                        <div class="friend-add">
+                            <input type="text" id="friendTagInput" maxlength="32" placeholder="Enter friend tag e.g. Zeus#1443" onkeypress="if(event.key==='Enter') addFriendByTag()">
+                            <button class="btn-secondary" onclick="addFriendByTag()">Add Friend</button>
+                        </div>
+                        <div class="profile-status" id="friendStatus"></div>
+                        <div class="friends-list" id="friendsList"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messages Screen -->
+        <div id="messagesScreen" class="screen">
+            <div class="container">
+                <div class="messages-header">
+                    <h1 class="game-title">Suggestions Inbox</h1>
+                    <button class="btn-secondary btn-small" onclick="showHomepage()">Back to Home</button>
+                </div>
+
+                <!-- Suggestions Tabs -->
+                <div class="suggestions-nav">
+                    <button class="suggestions-nav-btn active" data-tab="active" onclick="switchSuggestionsTab('active')">Active</button>
+                    <button class="suggestions-nav-btn" data-tab="archive" onclick="switchSuggestionsTab('archive')">Archive</button>
+                </div>
+
+                <div id="messagesEmptyState" class="messages-empty" style="display: none;">
+                    No suggestions yet. Encourage players to share their ideas!
+                </div>
+                <div class="messages-list" id="messagesList"></div>
+            </div>
+        </div>
+
+        <!-- Lobby Setup Screen (before creating) -->
+        <div id="lobbySetupScreen" class="screen">
+            <div class="container">
+                <div class="random-game-header">
+                    <h1 class="game-title">Create Lobby 👥</h1>
+                    <button class="btn-dice" onclick="randomizeLobbySetup()" title="Randomize lobby settings">🎲</button>
+                </div>
+                <p class="party-subtitle">Set up your lobby before making it public!</p>
+
+                <div class="menu-section">
+                    <label for="lobbySetupGameTitle">Game Title:</label>
+                    <input type="text" id="lobbySetupGameTitle" placeholder="Enter game title (e.g., 'Best Movies')" maxlength="50">
+                </div>
+
+                <div class="lobby-setup-row">
+                    <div class="menu-section half-width">
+                        <label for="lobbySetupRowAmount">Number of Rows:</label>
+                        <div class="number-input">
+                            <button class="btn-adjust" onclick="adjustLobbySetupRows(-1)">−</button>
+                            <input type="number" id="lobbySetupRowAmount" value="10" min="1" max="100" onchange="adjustLobbySetupRows(0)">
+                            <button class="btn-adjust" onclick="adjustLobbySetupRows(1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-section half-width">
+                        <label for="lobbySetupTimer">Lobby Timer (minutes):</label>
+                        <div class="number-input">
+                            <button class="btn-adjust" onclick="adjustLobbyTimer(-1)">-</button>
+                            <input type="number" id="lobbySetupTimer" value="10" min="1" max="60">
+                            <button class="btn-adjust" onclick="adjustLobbyTimer(1)">+</button>
+                        </div>
+                        <p class="player-hint">When the timer expires the game auto-starts; players not ready are removed.</p>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <label>Lobby Privacy:</label>
+                    <div class="lobby-privacy-options">
+                        <label class="privacy-option">
+                            <input type="radio" name="lobbyPrivacy" value="public" checked>
+                            <span class="privacy-label">
+                                <strong>🌐 Public</strong>
+                                <small>Anyone can join from the lobby list</small>
+                            </span>
+                        </label>
+                        <label class="privacy-option">
+                            <input type="radio" name="lobbyPrivacy" value="private">
+                            <span class="privacy-label">
+                                <strong>🔒 Private</strong>
+                                <small>Requires join code to access</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h3>Items</h3>
+                    <p class="player-hint">Fill in all items before creating the lobby</p>
+                    <div id="lobbySetupItemsList"></div>
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" onclick="createLobbyFromSetup()">Create Lobby</button>
+                    <button class="btn-secondary" onclick="returnToHomepage()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Party Mode Setup Screen -->
+        <div id="partySetupScreen" class="screen">
+            <div class="container">
+                <h1 class="game-title">Party Mode 🎉</h1>
+                <p class="party-subtitle">Players take turns adding items to the list!</p>
+
+                <div class="menu-section">
+                    <label for="partyGameTitle">Game Title:</label>
+                    <input type="text" id="partyGameTitle" placeholder="Enter game title (e.g., 'Best Movies')" maxlength="50">
+                </div>
+
+                <div class="lobby-setup-row">
+                    <div class="menu-section half-width">
+                        <label for="partyRowAmount">Number of Rows:</label>
+                        <div class="number-input">
+                            <button class="btn-adjust" onclick="adjustPartyRows(-1)">−</button>
+                            <input type="number" id="partyRowAmount" value="10" min="3" max="100">
+                            <button class="btn-adjust" onclick="adjustPartyRows(1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-section half-width">
+                        <label for="partyTimer">Setup Timer (minutes):</label>
+                        <div class="number-input">
+                            <button class="btn-adjust" onclick="adjustPartyTimer(-1)">−</button>
+                            <input type="number" id="partyTimer" value="5" min="1" max="60">
+                            <button class="btn-adjust" onclick="adjustPartyTimer(1)">+</button>
+                        </div>
+                        <p class="player-hint">Time limit for adding all items</p>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <label>Privacy:</label>
+                    <div class="lobby-privacy-options">
+                        <label class="privacy-option">
+                            <input type="radio" name="partyPrivacy" value="public" checked>
+                            <span class="privacy-label">
+                                <strong>🌐 Public</strong>
+                                <small>Anyone can join from the lobby list</small>
+                            </span>
+                        </label>
+                        <label class="privacy-option">
+                            <input type="radio" name="partyPrivacy" value="private">
+                            <span class="privacy-label">
+                                <strong>🔒 Private</strong>
+                                <small>Requires join code to access</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" onclick="createPartyLobby()">Create Party</button>
+                    <button class="btn-secondary" onclick="returnToHomepage()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Party Waiting Room (players join before item creation) -->
+        <div id="partyWaitingScreen" class="screen">
+            <div class="container">
+                <div class="lobby-screen-header">
+                    <h2>Party Mode 🎉</h2>
+                    <div class="lobby-code-display">
+                        <span class="code-label">Join Code:</span>
+                        <span class="code-value" id="partyWaitingJoinCode">------</span>
+                    </div>
+                </div>
+
+                <div class="party-info-section">
+                    <h3 id="partyWaitingTitleDisplay"></h3>
+                    <div class="lobby-timer-display" id="partyWaitingTimerDisplay">
+                        <span>⏱️</span>
+                        <span id="partyWaitingTimerText">5:00</span>
+                    </div>
+                </div>
+
+                <p class="party-subtitle">Waiting for players to join...</p>
+
+                <div class="menu-section">
+                    <h3>Players</h3>
+                    <div id="partyWaitingPlayersList" class="lobby-players-list"></div>
+                </div>
+
+                <div class="menu-section">
+                    <p class="player-hint">Once everyone has joined, the host can start item creation.</p>
+                    <div class="party-info-box">
+                        <div><strong>Items to create:</strong> <span id="partyWaitingRowAmount">10</span></div>
+                        <div><strong>Setup time:</strong> <span id="partyWaitingTimeLimit">5</span> minutes</div>
+                    </div>
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" id="startItemCreationButton" onclick="startItemCreation()" style="display: none;">Start Item Creation</button>
+                    <button class="btn-danger" id="cancelPartyWaitingButton" onclick="cancelPartyGame()" style="display: none;">Cancel Game</button>
+                    <button class="btn-secondary" onclick="leavePartyWaiting()">Leave Lobby</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Party Lobby Screen (turn-based item input) -->
+        <div id="partyLobbyScreen" class="screen">
+            <div class="container">
+                <div class="lobby-screen-header">
+                    <h2>Party Mode</h2>
+                    <div class="lobby-code-display">
+                        <span class="code-label">Join Code:</span>
+                        <span class="code-value" id="partyJoinCode">------</span>
+                    </div>
+                </div>
+
+                <div class="party-info-section">
+                    <h3 id="partyGameTitleDisplay"></h3>
+                    <div class="lobby-timer-display" id="partyTimerDisplay">
+                        <span>⏱️</span>
+                        <span id="partyTimerText">5:00</span>
+                    </div>
+                </div>
+
+                <div class="party-turn-indicator">
+                    <p id="partyCurrentTurnText" class="current-turn-text">Waiting for players...</p>
+                </div>
+
+                <div class="menu-section">
+                    <h3>Players</h3>
+                    <div id="partyPlayersList" class="lobby-players-list"></div>
+                </div>
+
+                <div class="menu-section">
+                    <h3>Items (<span id="partyItemCount">0</span> / <span id="partyItemTotal">10</span>)</h3>
+                    <div id="partyItemsList" class="party-items-container"></div>
+                </div>
+
+                <div class="party-input-section" id="partyInputSection" style="display: none;">
+                    <label for="partyItemInput">Add your item:</label>
+                    <input type="text" id="partyItemInput" placeholder="Enter item name" onkeypress="if(event.key==='Enter') submitPartyItem()">
+                    <button class="btn-primary" onclick="submitPartyItem()">Submit Item</button>
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" id="startPartyGameButton" onclick="startPartyGame()" style="display: none;">Start Game</button>
+                    <button class="btn-danger" id="cancelPartyLobbyButton" onclick="cancelPartyGame()" style="display: none;">Cancel Game</button>
+                    <button class="btn-secondary" onclick="leavePartyLobby()">Leave Lobby</button>
+                </div>
+            </div>
+        </div>
+
         <!-- Quick Lobby Screen -->
         <div id="lobbyScreen" class="screen">
             <div class="container">
@@ -118,6 +474,7 @@
                         <span class="code-value" id="lobbyJoinCode">------</span>
                         <button class="btn-secondary btn-small" onclick="copyJoinCode()">Copy</button>
                     </div>
+                    <div class="lobby-timer-display" id="lobbyTimerDisplay"></div>
                 </div>
                 <div class="lobby-container">
                     <div class="lobby-info">
@@ -130,7 +487,7 @@
                     <div class="lobby-controls">
                         <div class="menu-section">
                             <label for="lobbyGameTitle">Game Title:</label>
-                            <input type="text" id="lobbyGameTitle" placeholder="Enter game title" onchange="updateLobbyTitle()">
+                            <input type="text" id="lobbyGameTitle" placeholder="Enter game title" maxlength="50" onchange="updateLobbyTitle()">
                         </div>
                         <div class="menu-section">
                             <label for="lobbyRowAmount">Number of Rows:</label>
@@ -145,6 +502,7 @@
                             <p class="ready-count" id="readyCount">0 / 0 players ready</p>
                         </div>
                         <button class="btn-primary btn-large" onclick="startLobbyGame()" id="startLobbyButton" disabled>Start Game</button>
+                        <button class="btn-danger" id="cancelLobbyButton" onclick="cancelLobby()" style="display: none;">Cancel Game</button>
                     </div>
                 </div>
                 <button class="btn-secondary" onclick="leaveLobby()">Leave Lobby</button>
@@ -158,8 +516,8 @@
                 <p class="party-subtitle">Pass-and-play game for multiple players on one device</p>
 
                 <div class="menu-section">
-                    <label for="partyGameTitle">Game Title:</label>
-                    <input type="text" id="partyGameTitle" placeholder="Enter ranking topic (e.g., 'Best Movies')">
+                    <label for="partyModeGameTitle">Game Title:</label>
+                    <input type="text" id="partyModeGameTitle" placeholder="Enter ranking topic (e.g., 'Best Movies')">
                 </div>
 
                 <div class="menu-section">
@@ -185,13 +543,309 @@
             </div>
         </div>
 
+        <!-- New Ranking Setup Screen -->
+        <div id="singleDeviceScreen" class="screen">
+            <div class="container">
+                <h1 class="game-title">New Ranking 🎮</h1>
+                <p class="party-subtitle">Create a custom ranking game with multiple players!</p>
+
+                <div class="menu-section">
+                    <label for="singleDeviceGameTitle">Game Title:</label>
+                    <input type="text" id="singleDeviceGameTitle" placeholder="Enter ranking topic (e.g., 'Best Movies')" maxlength="50">
+                </div>
+
+                <div class="menu-section">
+                    <label for="singleDeviceRowAmount">Number of Rows:</label>
+                    <div class="number-input">
+                        <button class="btn-adjust" onclick="adjustSingleDeviceRows(-1)">−</button>
+                        <input type="number" id="singleDeviceRowAmount" value="10" min="1" max="100">
+                        <button class="btn-adjust" onclick="adjustSingleDeviceRows(1)">+</button>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h3>Players</h3>
+                    <p class="player-hint">Add all players - they can tell the host what items to add!</p>
+                    <div id="singleDevicePlayerList"></div>
+                    <button class="btn-secondary" onclick="addSingleDevicePlayer()">+ Add Player</button>
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" onclick="setupSingleDeviceGame()">Start Game</button>
+                    <button class="btn-secondary" onclick="returnToHomepage()">Back to Homepage</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Random Game Setup Screen -->
+        <div id="randomGameScreen" class="screen">
+            <div class="container">
+                <div class="random-game-header">
+                    <h1 class="game-title">Random Game 🎲</h1>
+                    <button class="btn-dice" onclick="rerollRandomGame()" title="Re-roll randomization">🎲</button>
+                </div>
+                <p class="party-subtitle">Randomly generated ranking game with auto-filled items!</p>
+
+                <div class="menu-section">
+                    <label for="randomGameTitle">Game Title:</label>
+                    <input type="text" id="randomGameTitle" placeholder="Random title" readonly>
+                    <div class="quick-pick-suggestions">
+                        <div class="suggestions-row">
+                            <span class="suggestions-label">Quick Pick:</span>
+                            <div id="randomTitleSuggestions" class="suggestion-chips"></div>
+                        </div>
+                        <div class="suggestions-row" id="presetSuggestionsRow" style="display: none;">
+                            <span class="suggestions-label">Presets:</span>
+                            <div id="randomPresetSuggestions" class="suggestion-chips"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <label for="randomGameRowAmount">Number of Rows:</label>
+                    <div class="number-input">
+                        <button class="btn-adjust" onclick="adjustRandomGameRows(-1)">−</button>
+                        <input type="number" id="randomGameRowAmount" value="10" min="1" max="100">
+                        <button class="btn-adjust" onclick="adjustRandomGameRows(1)">+</button>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h3>Players</h3>
+                    <p class="player-hint">Add all players for this random game!</p>
+                    <div id="randomGamePlayerList"></div>
+                    <button class="btn-secondary" onclick="addRandomGamePlayer()">+ Add Player</button>
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" onclick="setupRandomGameMode()">Start Game</button>
+                    <button class="btn-secondary" onclick="returnToHomepage()">Back to Homepage</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preset Game Main Screen -->
+        <div id="presetGameScreen" class="screen">
+            <div class="container">
+                <h1 class="game-title">Preset Games 📋</h1>
+                <p class="party-subtitle">Create your own presets or play others' creations!</p>
+
+                <div class="preset-options">
+                    <div class="preset-option-card" onclick="showMakePreset()">
+                        <div class="mode-icon">✏️</div>
+                        <h3>Make Preset</h3>
+                        <p>Create your own ranking preset</p>
+                    </div>
+
+                    <div class="preset-option-card" onclick="showBrowsePresets()">
+                        <div class="mode-icon">🔍</div>
+                        <h3>Browse Presets</h3>
+                        <p>Play presets created by others</p>
+                    </div>
+                </div>
+
+                <button class="btn-secondary" onclick="returnToHomepage()">Back to Homepage</button>
+            </div>
+        </div>
+
+        <!-- Make Preset Screen -->
+        <div id="makePresetScreen" class="screen">
+            <div class="container">
+                <h1 class="game-title">Make Preset ✏️</h1>
+                <p class="party-subtitle">Create a custom ranking preset that others can play!</p>
+
+                <div class="menu-section">
+                    <label for="presetTitle">Preset Title:</label>
+                    <input type="text" id="presetTitle" placeholder="Enter preset title (e.g., 'Best Marvel Movies')" maxlength="50">
+                </div>
+
+                <div class="menu-section">
+                    <label for="presetDescription">Description (optional):</label>
+                    <input type="text" id="presetDescription" placeholder="Brief description of this preset" maxlength="100">
+                </div>
+
+                <div class="menu-section">
+                    <h3>Items</h3>
+                    <p class="player-hint">Add all the items for this ranking (minimum 3 items)</p>
+                    <div id="presetItemsList"></div>
+                    <button class="btn-secondary" onclick="addPresetItem()">+ Add Item</button>
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" onclick="savePreset()">Save Preset</button>
+                    <button class="btn-secondary" onclick="showPresetGame()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Browse Presets Screen -->
+        <div id="browsePresetsScreen" class="screen">
+            <div class="container">
+                <h1 class="game-title">Browse Presets 🔍</h1>
+
+                <div class="preset-filters">
+                    <div class="filter-group">
+                        <label>Sort by:</label>
+                        <select id="presetSortFilter" onchange="applyPresetFilters()">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="alpha-asc">A-Z</option>
+                            <option value="alpha-desc">Z-A</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group search-group">
+                        <input type="text" id="presetSearchInput" placeholder="Search presets..." onkeypress="if(event.key==='Enter') applyPresetFilters()">
+                        <button class="btn-secondary btn-small" onclick="clearPresetSearch()">Clear</button>
+                        <button class="btn-secondary btn-small" onclick="applyPresetFilters()">Search</button>
+                    </div>
+                </div>
+
+                <div id="presetsList" class="presets-grid"></div>
+
+                <button class="btn-secondary" onclick="showPresetGame()">Back</button>
+            </div>
+        </div>
+
+        <!-- Play Preset Screen (Player Selection) -->
+        <div id="playPresetScreen" class="screen">
+            <div class="container">
+                <h1 class="game-title" id="playPresetTitle">Preset Game 📋</h1>
+                <p class="party-subtitle" id="playPresetDescription">Add players to start this preset game!</p>
+
+                <div class="menu-section">
+                    <h3>Players</h3>
+                    <p class="player-hint">Add all players for this game!</p>
+                    <div id="playPresetPlayerList"></div>
+                    <button class="btn-secondary" onclick="addPlayPresetPlayer()">+ Add Player</button>
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" onclick="startPresetGame()">Start Game</button>
+                    <button class="btn-secondary" onclick="showBrowsePresets()">Back to Presets</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Panel Screen -->
+        <div id="adminPanelScreen" class="screen">
+            <div class="container">
+                <h1 class="game-title">⚙️ Admin Panel</h1>
+
+                <!-- Admin Navigation -->
+                <div class="admin-nav">
+                    <button class="admin-nav-btn active" data-section="presets" onclick="switchAdminSection('presets')">Manage Presets</button>
+                    <button class="admin-nav-btn" data-section="users" onclick="switchAdminSection('users')">Manage Users</button>
+                    <button class="admin-nav-btn" data-section="password" onclick="switchAdminSection('password')">Change Password</button>
+                </div>
+
+                <!-- Manage Presets Section -->
+                <div id="adminPresetsSection" class="admin-section active">
+                    <p class="party-subtitle">Manage all presets in the system</p>
+
+                    <div class="preset-filters">
+                    <div class="filter-group">
+                        <label>Sort by:</label>
+                        <select id="adminPresetSortFilter" onchange="applyAdminPresetFilters()">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="alpha-asc">A-Z</option>
+                            <option value="alpha-desc">Z-A</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group search-group">
+                        <input type="text" id="adminPresetSearchInput" placeholder="Search presets..." onkeypress="if(event.key==='Enter') applyAdminPresetFilters()">
+                        <button class="btn-secondary btn-small" onclick="applyAdminPresetFilters()">Search</button>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <div class="admin-actions">
+                        <button class="btn-danger" id="deleteSelectedBtn" onclick="deleteSelectedPresets()" disabled>Delete Selected</button>
+                        <span id="selectedCount">0 selected</span>
+                    </div>
+                </div>
+
+                <div id="adminPresetsList" class="presets-grid"></div>
+                </div>
+
+                <!-- Manage Users Section -->
+                <div id="adminUsersSection" class="admin-section">
+                    <p class="party-subtitle">Manage user accounts and permissions</p>
+
+                    <div class="menu-section">
+                        <h3>Registered Users</h3>
+                        <div id="adminUsersList" class="admin-users-list"></div>
+                    </div>
+                </div>
+
+                <!-- Change Password Section -->
+                <div id="adminPasswordSection" class="admin-section">
+                    <p class="party-subtitle">Change your admin password</p>
+
+                    <div class="menu-section">
+                        <label for="adminCurrentPassword">Current Password:</label>
+                        <input type="password" id="adminCurrentPassword" placeholder="Enter current password" maxlength="50">
+
+                        <label for="adminNewPassword">New Password:</label>
+                        <input type="password" id="adminNewPassword" placeholder="Enter new password" maxlength="50">
+
+                        <label for="adminConfirmPassword">Confirm New Password:</label>
+                        <input type="password" id="adminConfirmPassword" placeholder="Confirm new password" maxlength="50" onkeypress="if(event.key==='Enter') adminChangePassword()">
+                    </div>
+
+                    <div class="menu-actions">
+                        <button class="btn-primary" onclick="adminChangePassword()">Change Password</button>
+                    </div>
+                </div>
+
+                <button class="btn-secondary" onclick="returnToHomepage()">Back to Homepage</button>
+            </div>
+        </div>
+
+        <!-- Edit Preset Screen -->
+        <div id="editPresetScreen" class="screen">
+            <div class="container">
+                <h1 class="game-title">Edit Preset ✏️</h1>
+                <p class="party-subtitle">Modify preset details and items</p>
+
+                <div class="menu-section">
+                    <label for="editPresetTitle">Preset Title:</label>
+                    <input type="text" id="editPresetTitle" placeholder="Enter preset title">
+                </div>
+
+                <div class="menu-section">
+                    <label for="editPresetDescription">Description (optional):</label>
+                    <input type="text" id="editPresetDescription" placeholder="Brief description of this preset">
+                </div>
+
+                <div class="menu-section">
+                    <label for="editPresetCreator">Creator:</label>
+                    <input type="text" id="editPresetCreator" placeholder="Creator username" readonly>
+                </div>
+
+                <div class="menu-section">
+                    <h3>Items</h3>
+                    <p class="player-hint">Edit the items for this ranking (minimum 3 items)</p>
+                    <div id="editPresetItemsList"></div>
+                    <button class="btn-secondary" onclick="addEditPresetItem()">+ Add Item</button>
+                </div>
+
+                <div class="menu-actions">
+                    <button class="btn-primary" onclick="saveEditedPreset()">Save Changes</button>
+                    <button class="btn-secondary" onclick="cancelEditPreset()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
         <!-- Main Menu (Game Setup) -->
         <div id="mainMenu" class="screen">
             <div class="container">
                 <h1 class="game-title">Reverse Ranking</h1>
                 <div class="menu-section">
                     <label for="gameTitle">Game Title:</label>
-                    <input type="text" id="gameTitle" placeholder="Enter ranking topic (e.g., 'Best Movies')">
+                    <input type="text" id="gameTitle" placeholder="Enter ranking topic (e.g., 'Best Movies')" maxlength="50">
                     <div class="saved-titles">
                         <label>Quick Pick:</label>
                         <div id="savedTitlesList"></div>
@@ -223,6 +877,9 @@
             <div class="container">
                 <div class="setup-header">
                     <h2 id="setupTitle"></h2>
+                    <div class="turn-indicator">
+                        <span id="setupCurrentPlayerTurn"></span>
+                    </div>
                     <p class="setup-description">Fill in all the ranking items below, then start the game!</p>
                 </div>
 
@@ -260,7 +917,7 @@
                     </div>
                 </div>
 
-                <div class="game-actions">
+                <div class="game-actions" id="gameActions">
                     <button class="btn-secondary" onclick="returnToMenu()">Return to Menu</button>
                 </div>
             </div>
@@ -269,17 +926,15 @@
         <!-- Completed Rankings Screen -->
         <div id="completedScreen" class="screen">
             <div class="container">
-                <div class="completed-header">
-                    <h2>Completed Rankings</h2>
-                    <div class="sort-controls">
-                        <label>Sort by:</label>
-                        <select id="sortSelect" onchange="changeSortOrder(this.value)">
-                            <option value="date-new">Newest First</option>
-                            <option value="date-old">Oldest First</option>
-                            <option value="title-asc">Title (A-Z)</option>
-                            <option value="title-desc">Title (Z-A)</option>
-                        </select>
-                    </div>
+                <h1 class="game-title">Completed Rankings 🏆</h1>
+                <div class="sort-controls">
+                    <label>Sort by:</label>
+                    <select id="sortSelect" onchange="changeSortOrder(this.value)">
+                        <option value="date-new">Newest First</option>
+                        <option value="date-old">Oldest First</option>
+                        <option value="title-asc">Title (A-Z)</option>
+                        <option value="title-desc">Title (Z-A)</option>
+                    </select>
                 </div>
                 <div id="completedList" class="completed-grid"></div>
                 <button class="btn-secondary" onclick="returnToMenu()">Return to Menu</button>
@@ -303,6 +958,6 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=1.0.2.2"></script>
 </body>
 </html>

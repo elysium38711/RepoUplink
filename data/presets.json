@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1761527398268,
+    "title": "Books",
+    "description": "",
+    "items": [
+      "Blah",
+      "Blah blah",
+      "Blah blah blah"
+    ],
+    "creator": "Carly24",
+    "createdAt": "2025-10-27T01:09:58.268Z"
+  },
+  {
+    "id": 1761581063684,
+    "title": "Favorite Lord of the Rings Character",
+    "description": "",
+    "items": [
+      "Legolas",
+      "Gimili",
+      "Aragorn",
+      "Gandalf",
+      "Frodo",
+      "Pippin",
+      "Merry",
+      "Samwise",
+      "Arwen",
+      "Boromir",
+      "Faramir",
+      "Smeagol",
+      "Gollum",
+      "Galadrial"
+    ],
+    "creator": "Carly24",
+    "createdAt": "2025-10-27T16:04:23.684Z"
+  }
+]

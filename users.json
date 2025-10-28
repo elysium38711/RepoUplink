@@ -1,11 +1,770 @@
 [
   {
+    "username": "admin",
+    "password": "183089b849590a3ac1107646af332ae936b6c0e452540de07bf953171bfa049f",
+    "isRegistered": true,
+    "isAdmin": true,
+    "mustChangePassword": false,
+    "completedGames": [],
+    "savedTitles": [],
+    "presetGames": [],
+    "createdAt": "2025-10-26T00:00:00.000Z",
+    "tag": "51698",
+    "stats": {
+      "rankingsCompleted": 0,
+      "rankingsHosted": 0,
+      "points": 0,
+      "gameModesCompleted": {
+        "singleDevice": 0,
+        "random": 0,
+        "preset": 0,
+        "lobby": 0,
+        "party": 0
+      },
+      "lobbiesCreated": 0,
+      "lobbiesSaved": 0,
+      "incompleteGames": 0,
+      "gamesWithFriends": {}
+    },
+    "friends": [],
+    "avatar": {
+      "color": "#3b82f6",
+      "initial": "A"
+    }
+  },
+  {
     "username": "Zeus",
+    "password": "044862008e834b0c90c55b5cf836acb59bf31efc6da55d02fabd7dfd526b8705",
+    "isRegistered": true,
+    "isAdmin": true,
+    "completedGames": [
+      {
+        "id": 1761607627582,
+        "title": "Favorite Candy",
+        "date": "2025-10-27T23:27:07.582Z",
+        "winner": "Krackel",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Krackel",
+            "rank": 1
+          },
+          {
+            "number": 2,
+            "value": "Nerds",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Air Heads",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Kinder",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Hershey's Chocolate Bar",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Bazooka",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Life Savers",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Mounds",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Now and Later",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Charleston Chew",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#ec4899"
+          }
+        ]
+      },
+      {
+        "id": 1761512727799,
+        "title": "Testing 04",
+        "date": "2025-10-26T21:05:27.799Z",
+        "winner": "creampie",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "test",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Boob",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Pie",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "orange",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Pineapple",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Pussy",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Sucker",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Lollipop",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Dick",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "creampie",
+            "rank": 1
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#06b6d4"
+          },
+          {
+            "name": "Carly (Guest-855514)",
+            "color": "#f59e0b"
+          },
+          {
+            "name": "And (Guest-724839)",
+            "color": "#ef4444"
+          }
+        ]
+      },
+      {
+        "id": 1761510542957,
+        "title": "Dream Destinations",
+        "date": "2025-10-26T20:29:02.957Z",
+        "winner": "Sydney",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "London",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Bali",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Tokyo",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Paris",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Amsterdam",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Hawaii",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Sydney",
+            "rank": 1
+          },
+          {
+            "number": 8,
+            "value": "Maldives",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Dubai",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "New York City",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#ec4899"
+          },
+          {
+            "name": "Carly24",
+            "color": "#6366f1"
+          }
+        ]
+      },
+      {
+        "id": 1761510253708,
+        "title": "Best Restaurants",
+        "date": "2025-10-26T20:24:13.708Z",
+        "winner": "Osteria Francescana",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Eleven Madison Park",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Osteria Francescana",
+            "rank": 1
+          },
+          {
+            "number": 3,
+            "value": "Per Se",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Nobu",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Mugaritz",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "El Bulli",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Gaggan",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Mirazur",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Sukiyabashi Jiro",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Alinea",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#06b6d4"
+          },
+          {
+            "name": "Carly24",
+            "color": "#84cc16"
+          }
+        ]
+      },
+      {
+        "id": 1761508842012,
+        "title": "Sex Positions",
+        "date": "2025-10-26T20:00:42.012Z",
+        "winner": "Steeple",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Missionary",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Anal Beads",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Doggy",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Vibrator",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Blow Jobs",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "69",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Steeple",
+            "rank": 1
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#3b82f6"
+          },
+          {
+            "name": "Carly",
+            "color": "#14b8a6"
+          },
+          {
+            "name": "Taylor",
+            "color": "#ef4444"
+          }
+        ]
+      },
+      {
+        "id": 1761508078544,
+        "title": "Coolest Cars",
+        "date": "2025-10-26T19:47:58.544Z",
+        "winner": "Chevrolet Corvette",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Aston Martin DB5",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Porsche 911",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Tesla Model S",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Chevrolet Corvette",
+            "rank": 1
+          },
+          {
+            "number": 5,
+            "value": "Mercedes AMG GT",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "BMW M3",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Lamborghini Aventador",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Dodge Challenger",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Ferrari F40",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "McLaren P1",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#06b6d4"
+          },
+          {
+            "name": "Carly",
+            "color": "#a855f7"
+          }
+        ]
+      },
+      {
+        "id": 1761507516035,
+        "title": "test",
+        "date": "2025-10-26T19:38:36.035Z",
+        "winner": "lidsafh098y3r23rhwe4riouhyweiurfweufhikuewfdikqwasrgwgdfkjuwged",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "test1",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "test2",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "test3",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "lknsfd",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "31-4r9u213",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "aqsdfolinq",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "qod832y",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "apore937",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "awerlopij309u",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "lidsafh098y3r23rhwe4riouhyweiurfweufhikuewfdikqwasrgwgdfkjuwged",
+            "rank": 1
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#10b981"
+          },
+          {
+            "name": "test",
+            "color": "#8b5cf6"
+          }
+        ]
+      },
+      {
+        "id": 1761507395413,
+        "title": "Title",
+        "date": "2025-10-26T19:36:35.413Z",
+        "winner": "Test",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Test",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Test",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Test",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Test",
+            "rank": null
+          },
+          {
+            "number": 5,
+            "value": "Test",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Test",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Test",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Test",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Test",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Test",
+            "rank": 1
+          }
+        ],
+        "players": [
+          {
+            "name": "Zeus",
+            "color": "#ec4899"
+          },
+          {
+            "name": "Carly",
+            "color": "#06b6d4"
+          },
+          {
+            "name": "Taylor",
+            "color": "#a855f7"
+          }
+        ]
+      }
+    ],
+    "savedTitles": [
+      "test"
+    ],
+    "presetGames": [],
+    "createdAt": "2025-10-25T18:11:51.441Z",
+    "tag": "20111",
+    "stats": {
+      "rankingsCompleted": 0,
+      "rankingsHosted": 0,
+      "points": 0,
+      "gameModesCompleted": {
+        "singleDevice": 0,
+        "random": 0,
+        "preset": 0,
+        "lobby": 0,
+        "party": 0
+      },
+      "lobbiesCreated": 6,
+      "lobbiesSaved": 1,
+      "incompleteGames": 0,
+      "gamesWithFriends": {}
+    },
+    "friends": [],
+    "avatar": {
+      "color": "#3b82f6",
+      "initial": "Z"
+    }
+  },
+  {
+    "username": "Carly24",
+    "password": "35241b61223efb7524972ed8cf596f7884eebf6563a59458fd688d15db3fc2fb",
+    "isRegistered": true,
+    "isAdmin": true,
+    "completedGames": [
+      {
+        "id": 1761514396928,
+        "title": "Harry Potter Characters",
+        "date": "2025-10-26T21:33:16.928Z",
+        "winner": "Hagrid",
+        "allItems": [
+          {
+            "number": 1,
+            "value": "Harry",
+            "rank": null
+          },
+          {
+            "number": 2,
+            "value": "Ron",
+            "rank": null
+          },
+          {
+            "number": 3,
+            "value": "Hermoine",
+            "rank": null
+          },
+          {
+            "number": 4,
+            "value": "Hagrid",
+            "rank": 1
+          },
+          {
+            "number": 5,
+            "value": "McGonagall",
+            "rank": null
+          },
+          {
+            "number": 6,
+            "value": "Dumbledore",
+            "rank": null
+          },
+          {
+            "number": 7,
+            "value": "Luna",
+            "rank": null
+          },
+          {
+            "number": 8,
+            "value": "Neville",
+            "rank": null
+          },
+          {
+            "number": 9,
+            "value": "Draco",
+            "rank": null
+          },
+          {
+            "number": 10,
+            "value": "Snape",
+            "rank": null
+          }
+        ],
+        "players": [
+          {
+            "name": "Carly24",
+            "color": "#84cc16"
+          },
+          {
+            "name": "Player 2",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ],
+    "savedTitles": [],
+    "presetGames": [],
+    "createdAt": "2025-10-26T20:02:57.044Z",
+    "tag": "40705",
+    "stats": {
+      "rankingsCompleted": 0,
+      "rankingsHosted": 0,
+      "points": 0,
+      "gameModesCompleted": {
+        "singleDevice": 0,
+        "random": 0,
+        "preset": 0,
+        "lobby": 0,
+        "party": 0
+      },
+      "lobbiesCreated": 0,
+      "lobbiesSaved": 0,
+      "incompleteGames": 0,
+      "gamesWithFriends": {}
+    },
+    "friends": [],
+    "avatar": {
+      "color": "#3b82f6",
+      "initial": "C"
+    }
+  },
+  {
+    "username": "Andrew",
     "password": "044862008e834b0c90c55b5cf836acb59bf31efc6da55d02fabd7dfd526b8705",
     "isRegistered": true,
     "completedGames": [],
     "savedTitles": [],
     "presetGames": [],
-    "createdAt": "2025-10-25T18:11:51.441Z"
+    "createdAt": "2025-10-27T23:06:15.793Z",
+    "tag": "36649",
+    "stats": {
+      "rankingsCompleted": 0,
+      "rankingsHosted": 0,
+      "points": 0,
+      "gameModesCompleted": {
+        "singleDevice": 0,
+        "random": 0,
+        "preset": 0,
+        "lobby": 0,
+        "party": 0
+      },
+      "lobbiesCreated": 0,
+      "lobbiesSaved": 0,
+      "incompleteGames": 0,
+      "gamesWithFriends": {}
+    },
+    "friends": [],
+    "avatar": {
+      "color": "#3b82f6",
+      "initial": "A"
+    }
+  },
+  {
+    "username": "Meep",
+    "password": "044862008e834b0c90c55b5cf836acb59bf31efc6da55d02fabd7dfd526b8705",
+    "isRegistered": true,
+    "completedGames": [],
+    "savedTitles": [],
+    "presetGames": [],
+    "createdAt": "2025-10-27T23:08:56.820Z",
+    "tag": "1854",
+    "stats": {
+      "rankingsCompleted": 0,
+      "rankingsHosted": 0,
+      "points": 0,
+      "gameModesCompleted": {
+        "singleDevice": 0,
+        "random": 0,
+        "preset": 0,
+        "lobby": 0,
+        "party": 0
+      },
+      "lobbiesCreated": 0,
+      "lobbiesSaved": 0,
+      "incompleteGames": 0,
+      "gamesWithFriends": {}
+    },
+    "friends": [],
+    "avatar": {
+      "color": "#3b82f6",
+      "initial": "M"
+    }
   }
 ]
